@@ -1,10 +1,3 @@
-<!-- Load  static file: -->
-{% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style_results.css' %}">
-
-
-<!-- What follows would be the "HTML replacement": -->
 <h1>{{ question.question_text }}</h1>
 
 <ul>
@@ -15,3 +8,9 @@
 
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
 
+<article>
+    <h1>This is a headline.</h1>
+    <p>This is my first paragraph.</p>
+    <p>This is the second paragrah.</p>
+    <p>This third paragraph has <em>text that's emphasized</em> for effect.</p>
+</article>

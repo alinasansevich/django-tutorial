@@ -1,0 +1,324 @@
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+
+<article>
+    <h1>This is a headline.</h1>
+    <p>This is my first paragraph.</p>
+    <p>This is the second paragrah.</p>
+    <p>This third paragraph has <em>text that's emphasized</em> for effect.</p>
+</article>
+<br>
+<br>
+<br>
+<p>H<sub>2</sub>O &copy;</p>
+<br>
+<br>
+<br>
+
+<nav role="navigation" aria-label= "main menu">
+    <ul class="navbar">
+        <li><a href="/patience">Patience</a></li>
+        <li><a href="/breathe">Breathe</a></li>
+    </ul>
+</nav>
+
+<p>2<sup><small><small>5</small></small></sup><sub>8</sub>
+
+
+<article>
+   <p><i>Nothing to see here, <sup>move on...</sup></i></p>
+</article>
+
+<p><small>Wanting to be someone else <q>is a waste of the person <i>you are</i></small></q></p>
+
+
+<blockquote>
+<h2><strong>Invictus</strong></h2>
+<p>Out of the night that covers me,<br>
+      Black as the pit from pole to pole,<br>
+I thank whatever gods may be<br>
+      For my unconquerable soul.</p>
+
+<p>In the fell clutch of circumstance<br>
+      I have not winced nor cried aloud.<br>
+Under the bludgeonings of chance<br>
+      My head is bloody, but unbowed.</p>
+
+<p>Beyond this place of wrath and tears<br>
+      Looms but the Horror of the shade,<br>
+And yet the menace of the years<br>
+      Finds and shall find me unafraid.</p>
+
+<p>It matters not how strait the gate,<br>
+      How charged with punishments the scroll,<br>
+<em>I am the master of my fate,<br>
+      I am the captain of my soul.</em></p>
+<cite>- Nelson Mandela</cite>
+</blockquote>
+
+<ol>
+    <li>Build a few more projects.</li>
+    <li>Finish previous ones.</li>
+    <li>Network and <em>get a job!</em></li>
+</ol>
+
+<dl>
+    <dt>This is the <b>key</b></dt>
+    <dd>and this is the <b>value</b></dd>
+</dl>
+
+<code><time datetime=2021-07-30>Today is Friday, July 30, 2021</time></code>
+
+
+
+<h3>The Zen of Python</h3>
+<br>
+<pre>
+<p>Beautiful is better than ugly.<br>
+Explicit is better than implicit.<br>
+    Simple is better than complex.<br>
+Complex is better than complicated.<br>
+    Flat is better than nested.<br>
+Sparse is better than dense.<br>
+    <sup>Readability counts.</sup><br>
+Special cases aren't special enough to break the rules.<br>
+    Although practicality beats purity.<br>
+Errors should never pass silently.<br>
+    Unless explicitly silenced.<br>
+In the face of ambiguity, refuse the temptation to guess.<br>
+    There should be one-- and preferably only one --obvious way to do it.<br>
+Although that way may not be obvious at first unless you're Dutch.<br>
+    Now is better than never.<br>
+Although never is often better than *right* now.<br>
+    &lt;If the implementation is hard to explain, it's a bad idea.&gt;<br>
+If the implementation is easy to explain, it may be a good idea.<br>
+    Namespaces are one honking great idea -- let's do more of those!</p></pre>
+
+<h3>Image formats</h2>
+
+<ol>
+    <li>gif: small, can be animated, but it can also become pixelated</li>
+    <ul>
+        <li>Does well compressing large areas of a single color</li>
+        <li>Limited color space of 256 colors</li>
+        <li>Can do transparency, with jagged edges</li>
+        <li>Can have multiple frames, and make a little movie</li>
+    </ul>
+    <li>svg: the best, use it if you can</li>
+    <ul>
+        <li>it's a vector = it can be as large as you want, won't lose quality
+    </ul>
+    <li>jpg: great for compressing photos</li>
+    <ul>
+        <li>Can be compressed, DO NOT put a XXX megapixel jpg on your website</li>
+        <li>can make the website VERY slow: needs to be prepared for the web</li>
+    </ul>
+    <li>png: when you need traansparency, good at compression, used for photos and images</li>
+    <ul>
+        <li>Images that need transparency</li>
+        <li>Good at compression</li>
+        <li>Photos and images</li>
+        <li>Depends on the use case</li>
+    </ul>
+</ol>
+
+<h3>Image sizes - Responsive images</h3>
+
+<li>Create multiple copies of your images (480px, 960px, 1440px, 1920px) and then tell the browser that those images are available.
+<br>
+<br>
+<img src='https://miro.medium.com/max/1400/0*7OgX4oabJGOkFqPP'
+     alt='Zora Neale Hurston quote'
+     width='400'
+     height='300'>
+
+<img src='https://miro.medium.com/max/1400/0*7OgX4oabJGOkFqPP'
+     alt='Zora Neale Hurston quote'
+     width='400'
+     height='300'
+     
+     srcset="https://miro.medium.com/max/1400/0*7OgX4oabJGOkFqPP 2x,
+             https://miro.medium.com/max/1400/0*7OgX4oabJGOkFqPP 3x,
+             https://miro.medium.com/max/1400/0*7OgX4oabJGOkFqPP 4x">
+
+<!-- in the srcset, arguments are
+image1-url resolution1, image2-url resolution2, etc --> 
+
+<!-- all those urls in the source set should point to different sizes of the same image.
+The browser will pick one according to the screen size, the device, even the connection's speed.-->
+
+<h3>Image sizes - Responsive width</h3>
+
+480w = 480 px wide<br>
+960w = 960 px wide<br>
+
+<p>The <i>sizes</i> attribute<br>
+Lists which size image to use at which media query.<br>
+<br>
+The <i>srcset</i> attribute<br>
+Allows you to specify multiple files to be used based on either viewport width
+or image pixel width.
+<br>
+<h3>Image sizes - Responsive pictures</h3>
+
+<picture>
+    <source media="(min-width:600px)"
+            srcset="image - big size"
+    <source srcset="image - cropped"
+    <img src="https://denisepass.com/wp-content/uploads/2018/04/Stubborn-Hope-When-Heart-is-Sad.png"
+       width="484" height="406"
+       alt="Waiting with a heavy heart">
+</picture>
+
+<picture>
+  <source media="(min-width:600px)"
+          srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-320.jpg  320w,
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-480.jpg  480w, 
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-720.jpg  720w,
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-960.jpg  960w, 
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-1440.jpg 1440w, 
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-1920.jpg 1920w" >
+  <source srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-320.jpg 320w,
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-480.jpg 480w, 
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-720.jpg 720w,
+                  https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-cropped-960.jpg 960w" >
+  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/dog2-480.jpg" 
+       alt="smiling black dog"
+       height="360px" width="480px">
+</picture>
+
+<!-- https://codepen.io/jensimmons/pen/wvwXLQa?editors=1000 -->
+
+
+<h3>Image sizes - Responsive pictures</h3>
+<!-- https://codepen.io/jensimmons/pres/OJLEWBV -->
+<figure>
+  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/maggie2.png" width="960" height="720" alt="shiny black dog in the sun">
+
+  <figcaption>Maggie the dog enjoys resting in a field, after a long day of chasing squirrels.</figcaption>
+</figure>
+
+<!-- <figure> : For anything that appears as a figure, iillustrating something-->
+<!-- <figcaption> : For demonstration of a concept which needs a caption-->
+
+
+<audio controls src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/birds.mp3"></audio>
+
+<!-- https://codepen.io/jensimmons/pen/BaBVdWp?editors=1000
+
+loop:
+<audio src="audio.mp3" loop></audio>
+
+autoplay:   CAREFUL, NOT ALWAYS WELCOME!
+<audio src="audio.mp3" loop autoplay></audio>
+
+ -->
+
+<!-- To provide the browser with multiple audio file formats, 
+put the src in the <source> tag  -->
+<audio controls>
+  <source 
+      src="http://example.com/birds.ogg" 
+  		type="audio/ogg; codec=opus">
+	<source 
+      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/birds.mp3" 
+  		type="audio/mpeg">
+  Sorry your browser doesn't not support audio.
+  
+</audio>
+
+
+<video></video>
+
+<!-- https://codepen.io/jensimmons/pen/VwZdzBe?editors=1000 
+
+The H.264 codec currently has the widest support across browsers, but it's not open source...
+
+This is embedded video, but it is not used so much because it's easier to just
+"link to YouTube!"
+-->
+
+<video controls>
+	<source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/moonwalk.480p.vp9.webm" 
+  				type="video/webm">
+	<source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/moonwalk.480p.h264.mp4" 
+  				type="video/mp4">
+</video>
+
+<!--
+Captions and subtitles
+
+https://codepen.io/jensimmons/pen/KKPevBe?editors=1000
+-->
+<video controls>
+  <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/moonwalk.480p.vp9.webm" 
+    type="video/webm">
+  <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/moonwalk.480p.h264.mp4" 
+    type="video/mp4">
+  
+  <track src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/moonwalk.vtt"
+         kind="captions"
+         label="English"
+         srclang="en"
+         default>
+  
+   <track src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10558/moonwalk.es-la.es.vtt"
+         kind="subtitles"
+         label="Español"
+         srclang="es">
+  
+  <p>This would be a video of a moonwalk, if your device supported playing this video.</p>
+</video>
+
+<!--
+Embbeding other media through iframes
+9 biggest mistakes with css grid
+https://www.youtube.com/watch?v=0Gr1XSyxZy0
+
+https://codepen.io/jensimmons/pen/RwbJLbV?editors=1000
+-->
+
+<!-- privacy enhanced:
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GFW-WfuX2Dk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GFW-WfuX2Dk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<html lang="en-US" dir="ltr">
+<html lang="en-GB" dir="ltr">
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+
+<div></div>
+<!-- It's a block-level element -->
+<span></span>
+<!-- It's an inline element
+
+https://codepen.io/jensimmons/pen/dybjNLQ?editors=1000
+
+ -->
+<article lang="en">
+  <h1>This is the headline</h1>
+  <div class="box">
+    <p>The first paragraph.</p>
+    <p>Some text in a second paragraph.</p>
+    <p>Third paragraph. <span lang="es" class="bilingual">Esta oración está en español.</span> Some of this text is in another language.</p>
+    <p>Fourth paragraph.</p>
+  </div>
+</article>
+
+
+
+
+

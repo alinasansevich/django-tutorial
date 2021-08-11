@@ -1,3 +1,10 @@
+<!-- Load  static file: -->
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+
+<!-- What follows would be the "HTML replacement": -->
 <form action="{% url 'polls:vote' question.id %}" method="post">
 {% csrf_token %}
 <fieldset>

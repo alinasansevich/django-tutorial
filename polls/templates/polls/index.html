@@ -1,3 +1,10 @@
+<!-- Load  static file: -->
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+
+<!-- What follows would be the "HTML replacement": -->
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
