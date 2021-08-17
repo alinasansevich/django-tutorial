@@ -19,6 +19,9 @@ urlpatterns = [
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
     # ex: /polls/5/vote/
     path('<int:question_id>/vote/', views.vote, name='vote'),
+    # I added this following CoreySchafer-video2
+    #path('', views.home, name='polls-home'),
+    path('about/', views.about, name='polls-about'),
     ]
 
 

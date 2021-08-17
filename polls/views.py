@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse # I added this, following CoreySchafer-video2
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
@@ -52,10 +53,9 @@ def vote(request, question_id):
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
+# I added this following CoreySchafer-video2
+def home(request):
+    return HttpResponse('<h1>Polls Home</h1>')
 
-
-
-
-
-
-
+def about(request):
+    return HttpResponse('<h1>Polls About</h1>')

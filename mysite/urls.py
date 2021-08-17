@@ -16,9 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-
 urlpatterns = [
-    path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
-    path('', include('polls.urls')), # I added this one!
+    #path('', include('polls.urls')),
+    path('polls/', include('polls.urls')),
 ]
+
+
+# the line I added raised this warning:
+# WARNINGS:
+# ?: (urls.W005) URL namespace 'polls' isn't unique. You may not be able to reverse all URLs in this namespace
+ 
+# https://stackoverflow.com/questions/53473027/django-warning-urls-w005-url-namespace-isnt-unique
